@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Nexora Industries Inc.</title>
+<meta name="description" content="Guides and articles on hazardous material surveys, asbestos abatement coordination, demolition, and site preparation from Nexora Industries, serving British Columbia.">
+<link rel="canonical" href="https://www.nexoraindustries.ca/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Nexora Industries Inc.">
+<meta property="og:description" content="Guides and articles on hazardous material surveys, asbestos abatement coordination, demolition, and site preparation.">
+<meta property="og:url" content="https://www.nexoraindustries.ca/blog/">
+<meta property="og:locale" content="en_CA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14171A; --ink-soft:#1F2327; --paper:#E7E8E1; --paper-white:#F4F4EF;
+    --safety:#F2B705; --steel:#3C4A54; --rust:#B54A24; --concrete:#82847C;
+    --line:rgba(20,23,26,0.14); --line-on-dark:rgba(244,244,239,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.01em; font-weight:600; line-height:1.15; }
+  .mono{ font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:880px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--safety); outline-offset:3px; }
+
+  .topbar{ background:var(--ink); border-bottom:1px solid var(--line-on-dark); }
+  .topbar-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto; }
+  .logo{ color:var(--paper-white); font-family:'Oswald',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.04em; display:flex; align-items:center; gap:10px; }
+  .logo .mark{ width:11px; height:11px; background:var(--safety); transform:rotate(45deg); flex:none; }
+  .back-link{ color:var(--paper-white); font-size:13px; font-family:'IBM Plex Mono',monospace; letter-spacing:0.05em; text-transform:uppercase; opacity:0.75; }
+  .back-link:hover{ opacity:1; color:var(--safety); }
+
+  .blog-hero{ background:var(--ink); color:var(--paper-white); padding:64px 0 48px; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--safety); margin-bottom:22px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--safety); }
+  .blog-hero h1{ font-size:clamp(30px,5vw,46px); max-width:600px; }
+  .blog-hero p{ margin-top:16px; color:rgba(244,244,239,0.7); max-width:520px; font-size:16px; }
+
+  .post-list{ padding:56px 0 80px; }
+  .post-card{ display:block; padding:28px 0; border-bottom:1px solid var(--line); transition:opacity .15s ease; }
+  .post-card:hover{ opacity:0.7; }
+  .post-date{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--rust); letter-spacing:0.04em; text-transform:uppercase; margin-bottom:10px; display:block; }
+  .post-card h2{ font-size:22px; margin-bottom:10px; text-transform:none; letter-spacing:0; }
+  .post-card p{ color:var(--concrete); font-size:15px; max-width:640px; }
+  .post-tag{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--steel); border:1px solid var(--line); padding:4px 10px; margin-top:14px; }
+
+  .empty-note{ color:var(--concrete); font-size:14.5px; padding:20px 0; font-style:italic; }
+
+  footer{ background:var(--ink); color:rgba(244,244,239,0.5); padding:32px 0; font-size:12.5px; }
+  .foot-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .foot-inner a{ color:rgba(244,244,239,0.7); }
+  .foot-inner a:hover{ color:var(--safety); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="logo"><span class="mark"></span>NEXORA INDUSTRIES</a>
+    <a href="/#contact" class="back-link">Request a Site Assessment</a>
+  </div>
+</div>
+
+<section class="blog-hero">
+  <div class="wrap">
+    <div class="eyebrow">Nexora Blog</div>
+    <h1>Guides &amp; Insights</h1>
+    <p>Practical guidance on hazardous material surveys, asbestos abatement coordination, demolition, and site preparation across British Columbia.</p>
+  </div>
+</section>
+
+<section class="post-list">
+  <div class="wrap">
+
+    <a href="/guides/fire-damaged-asbestos-guide.html" class="post-card">
+      <span class="post-date mono">Property Owner Guide</span>
+      <h2>What Happens to Asbestos in a Fire-Damaged Home</h2>
+      <p>Why fire-damaged sites carry higher asbestos risk, and what a proper hazmat assessment and cleanup process looks like for BC property owners rebuilding.</p>
+      <span class="post-tag">Read guide →</span>
+    </a>
+
+    <p class="empty-note">More guides on hazmat surveys, demolition, and site preparation coming soon.</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>&copy; 2026 Nexora Industries Inc.</span>
+    <a href="/">nexoraindustries.ca</a>
+  </div>
+</footer>
+
+</body>
+</html>
