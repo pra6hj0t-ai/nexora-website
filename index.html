@@ -1,1 +1,649 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Industries Inc. — Construction Management &amp; Environmental Services</title>
+<meta name="description" content="Nexora Industries provides construction management and environmental services across British Columbia — hazardous material surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization. Serving Surrey, the Lower Mainland, Vancouver Island, and BC Interior.">
+<link rel="canonical" href="https://www.nexoraindustries.ca/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Nexora Industries Inc. — Construction Management & Environmental Services">
+<meta property="og:description" content="Hazmat surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization across British Columbia. The team GCs call before anyone breaks ground.">
+<meta property="og:url" content="https://www.nexoraindustries.ca/">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexora Industries Inc. — Construction Management & Environmental Services">
+<meta name="twitter:description" content="Hazmat surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization across British Columbia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "Nexora Industries Inc.",
+  "description": "Construction management and environmental services company providing hazardous material surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization.",
+  "url": "https://www.nexoraindustries.ca/",
+  "telephone": "+1-778-706-4786",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Surrey",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Surrey"},
+    {"@type": "AdministrativeArea", "name": "Lower Mainland, BC"},
+    {"@type": "AdministrativeArea", "name": "Vancouver Island, BC"},
+    {"@type": "AdministrativeArea", "name": "BC Interior"}
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "19:00"
+  },
+  "priceRange": "$$",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hazardous Material Surveys"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asbestos Abatement Coordination"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Demolition"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Excavation & Site Stabilization"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Permitting & Municipal Coordination"}}
+    ]
+  }
+}
+</script>
+<style>
+  :root{
+    --ink:#14171A;
+    --ink-soft:#1F2327;
+    --paper:#E7E8E1;
+    --paper-white:#F4F4EF;
+    --safety:#F2B705;
+    --steel:#3C4A54;
+    --rust:#B54A24;
+    --concrete:#82847C;
+    --line:rgba(20,23,26,0.14);
+    --line-on-dark:rgba(244,244,239,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    font-weight:600;
+    line-height:1.05;
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.04em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--safety);
+    outline-offset:3px;
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--ink);
+    border-bottom:1px solid var(--line-on-dark);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:1180px; margin:0 auto;
+  }
+  .logo{
+    color:var(--paper-white);
+    font-family:'Oswald',sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:0.04em;
+    display:flex; align-items:center; gap:10px;
+  }
+  .logo .mark{
+    width:11px; height:11px;
+    background:var(--safety);
+    transform:rotate(45deg);
+    flex:none;
+  }
+  .nav{display:flex; gap:30px; align-items:center;}
+  .nav a{
+    color:var(--paper-white);
+    font-size:13px;
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    opacity:0.72;
+    transition:opacity .15s ease;
+  }
+  .nav a:hover{opacity:1;}
+  .nav-cta{
+    border:1px solid var(--safety) !important;
+    padding:9px 16px;
+    opacity:1 !important;
+    color:var(--safety) !important;
+    transition:background .15s ease, color .15s ease;
+  }
+  .nav-cta:hover{ background:var(--safety); color:var(--ink) !important; }
+  .menu-btn{display:none; background:none; border:none; color:var(--paper-white); font-size:24px; cursor:pointer;}
+  @media (max-width:820px){
+    .nav{
+      position:fixed; top:59px; left:0; right:0;
+      background:var(--ink);
+      flex-direction:column; align-items:flex-start;
+      padding:20px 32px 28px;
+      gap:18px;
+      border-bottom:1px solid var(--line-on-dark);
+      transform:translateY(-8px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+    .nav.open{ opacity:1; transform:translateY(0); pointer-events:auto; }
+    .menu-btn{display:block;}
+  }
+
+  .hero{
+    position:relative;
+    background:var(--ink);
+    color:var(--paper-white);
+    overflow:hidden;
+    padding:96px 0 120px;
+  }
+  .hero-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line-on-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line-on-dark) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 60% at 60% 30%, black 30%, transparent 75%);
+    opacity:0.9;
+  }
+  .contour{
+    position:absolute; right:-8%; top:-10%;
+    width:780px; max-width:100vw;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:2;}
+  .coord{
+    font-size:12px; color:var(--safety); opacity:0.85;
+    display:flex; gap:22px; margin-bottom:28px; flex-wrap:wrap;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--safety);
+    margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:26px; height:1px; background:var(--safety);}
+  .hero h1{
+    font-size:clamp(42px,7vw,84px);
+    max-width:820px;
+    margin-bottom:26px;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--safety);
+  }
+  .hero-sub{
+    max-width:520px;
+    font-size:17px;
+    color:rgba(244,244,239,0.78);
+    margin-bottom:40px;
+  }
+  .cta-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:15px 26px;
+    display:inline-flex; align-items:center; gap:10px;
+    transition:transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--safety); color:var(--ink); border:1px solid var(--safety);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); }
+  .btn-ghost{
+    border:1px solid var(--line-on-dark); color:var(--paper-white);
+  }
+  .btn-ghost:hover{ border-color:var(--safety); color:var(--safety); }
+
+  .stamp{
+    position:absolute;
+    right:6%; bottom:8%;
+    width:150px; height:150px;
+    border:1.5px solid var(--safety);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    transform:rotate(-11deg);
+    opacity:0.9;
+  }
+  .stamp-inner{
+    text-align:center;
+    color:var(--safety);
+  }
+  .stamp-inner .t1{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.14em;}
+  .stamp-inner .t2{font-family:'Oswald',sans-serif; font-weight:600; font-size:15px; margin:4px 0; letter-spacing:0.03em;}
+  .stamp-inner .t3{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.1em;}
+  @media (max-width:900px){ .stamp{display:none;} }
+
+  .positioning{
+    background:var(--paper-white);
+    border-bottom:1px solid var(--line);
+    padding:64px 0;
+  }
+  .pos-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1.4fr;
+    gap:56px;
+    align-items:start;
+  }
+  @media (max-width:820px){ .pos-grid{grid-template-columns:1fr; gap:26px;} }
+  .pos-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--rust);
+    display:flex; align-items:center; gap:10px;
+  }
+  .pos-label::before{content:''; width:8px; height:8px; background:var(--rust); border-radius:50%;}
+  .pos-grid h2{
+    font-size:clamp(26px,3.4vw,36px);
+    margin-top:12px;
+    max-width:360px;
+  }
+  .pos-copy p{
+    color:var(--concrete);
+    font-size:16px;
+    max-width:560px;
+    margin-bottom:16px;
+  }
+  .pos-copy strong{color:var(--ink);}
+
+  .process{padding:100px 0; background:var(--paper);}
+  .section-head{margin-bottom:56px; max-width:640px;}
+  .section-head .pos-label{margin-bottom:14px;}
+  .section-head h2{font-size:clamp(28px,4vw,42px);}
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    border-top:1px solid var(--line);
+  }
+  @media (max-width:980px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .steps{grid-template-columns:1fr;} }
+  .step{
+    padding:28px 20px 28px 0;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .steps .step:last-child{border-right:1px solid var(--line);}
+  @media (max-width:980px){
+    .steps .step:nth-child(2n){border-right:1px solid var(--line);}
+  }
+  .step-num{
+    font-family:'IBM Plex Mono',monospace;
+    color:var(--safety);
+    background:var(--ink);
+    display:inline-block;
+    padding:3px 8px;
+    font-size:12px;
+    margin-bottom:18px;
+  }
+  .step h3{font-size:17px; margin-bottom:10px; letter-spacing:0.02em;}
+  .step p{color:var(--concrete); font-size:14px; line-height:1.5;}
+
+  .services{padding:100px 0; background:var(--ink); color:var(--paper-white);}
+  .services .pos-label{color:var(--safety);}
+  .services .pos-label::before{background:var(--safety);}
+  .services .section-head h2{color:var(--paper-white);}
+  .svc-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line-on-dark);
+    border:1px solid var(--line-on-dark);
+  }
+  @media (max-width:900px){ .svc-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .svc-grid{grid-template-columns:1fr;} }
+  .svc-card{
+    background:var(--ink);
+    padding:36px 28px;
+    transition:background .18s ease;
+  }
+  .svc-card:hover{ background:var(--ink-soft); }
+  .svc-icon{
+    width:34px; height:34px;
+    margin-bottom:22px;
+  }
+  .svc-icon svg{ width:100%; height:100%; stroke:var(--safety); fill:none; stroke-width:1.4; }
+  .svc-card h3{ font-size:16px; margin-bottom:10px; letter-spacing:0.02em; }
+  .svc-card p{ color:rgba(244,244,239,0.6); font-size:14px; }
+
+  .sectors{ padding:80px 0; background:var(--paper-white); border-bottom:1px solid var(--line); }
+  .sector-row{
+    display:flex; flex-wrap:wrap; gap:12px;
+    margin-top:28px;
+  }
+  .chip{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:0.03em;
+    padding:10px 18px;
+    border:1px solid var(--line);
+    color:var(--steel);
+    background:var(--paper);
+  }
+
+  .trust{ padding:100px 0; background:var(--paper); }
+  .trust-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+    margin-top:48px;
+  }
+  @media (max-width:820px){ .trust-grid{grid-template-columns:1fr;} }
+  .trust-item{ border-top:2px solid var(--ink); padding-top:18px; }
+  .trust-item h3{ font-size:16px; margin-bottom:10px; }
+  .trust-item p{ color:var(--concrete); font-size:14.5px; }
+  .badge-row{ display:flex; gap:14px; margin-top:36px; flex-wrap:wrap; }
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px;
+    letter-spacing:0.04em; text-transform:uppercase;
+    color:var(--ink);
+    border:1px solid var(--ink);
+    padding:8px 14px;
+  }
+  .badge .dot{ width:6px; height:6px; background:var(--rust); border-radius:50%; }
+
+  .cta-band{
+    background:var(--safety);
+    color:var(--ink);
+    padding:80px 0;
+    text-align:left;
+  }
+  .cta-band-inner{
+    display:flex; justify-content:space-between; align-items:center; gap:32px; flex-wrap:wrap;
+  }
+  .cta-band h2{ font-size:clamp(26px,4vw,40px); max-width:520px; }
+  .cta-band .btn-primary{ background:var(--ink); color:var(--safety); border-color:var(--ink); }
+
+  footer{ background:var(--ink); color:rgba(244,244,239,0.7); padding:56px 0 32px; }
+  .foot-grid{
+    display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;
+    padding-bottom:36px; border-bottom:1px solid var(--line-on-dark);
+  }
+  @media (max-width:720px){ .foot-grid{grid-template-columns:1fr; gap:28px;} }
+  .foot-logo{ color:var(--paper-white); font-family:'Oswald',sans-serif; font-weight:700; font-size:18px; letter-spacing:0.04em; margin-bottom:14px; display:flex; align-items:center; gap:9px;}
+  .foot-logo .mark{ width:10px; height:10px; background:var(--safety); transform:rotate(45deg);}
+  .foot-col h4{ font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--safety); margin-bottom:14px; }
+  .foot-col a, .foot-col p{ display:block; font-size:14px; color:rgba(244,244,239,0.7); margin-bottom:9px; }
+  .foot-col a:hover{ color:var(--safety); }
+  .foot-bottom{
+    display:flex; justify-content:space-between; padding-top:22px; font-size:12.5px; color:rgba(244,244,239,0.4); flex-wrap:wrap; gap:10px;
+  }
+
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#top" class="logo"><span class="mark"></span>NEXORA INDUSTRIES</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="nav" id="nav">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#sectors">Sectors</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Request a Quote</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-grid"></div>
+  <svg class="contour" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" stroke="#F2B705" stroke-width="1">
+      <path d="M50,420 C150,380 200,300 180,220 C160,140 260,90 360,110 C460,130 500,220 470,300" opacity="0.35"/>
+      <path d="M20,380 C130,340 190,260 165,190 C145,120 250,70 350,90 C450,110 500,190 480,270" opacity="0.5"/>
+      <path d="M0,340 C110,300 175,230 150,165 C130,100 235,55 330,72 C425,90 480,160 465,235" opacity="0.7"/>
+      <path d="M-20,300 C90,260 155,200 132,140 C112,80 215,40 305,55 C395,70 450,130 440,200" opacity="0.9"/>
+    </g>
+    <g fill="#F2B705" opacity="0.9">
+      <circle cx="330" cy="90" r="3"/>
+      <circle cx="180" cy="220" r="3"/>
+    </g>
+  </svg>
+
+  <div class="wrap hero-inner">
+    <div class="coord mono">
+      <span>LAT 49.1913° N</span><span>LON 122.8490° W</span><span>SURREY, BC</span>
+    </div>
+    <div class="eyebrow">Construction Management &amp; Environmental Services</div>
+    <h1>The work<br>before <em>the work.</em></h1>
+    <p class="hero-sub">Nexora handles what has to happen before a site is buildable — hazardous material surveys, abatement, demolition, and stabilization — so your project starts clean and stays on schedule.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">Request a Site Assessment →</a>
+      <a href="#services" class="btn btn-ghost">View Our Scope</a>
+    </div>
+  </div>
+
+  <div class="stamp">
+    <div class="stamp-inner">
+      <div class="t1">LICENSED &amp; INSURED</div>
+      <div class="t2">NEXORA</div>
+      <div class="t3">BRITISH COLUMBIA</div>
+    </div>
+  </div>
+</section>
+
+<section class="positioning">
+  <div class="wrap pos-grid reveal">
+    <div>
+      <div class="pos-label">Not a conventional GC</div>
+      <h2>We don't compete with your builder. We clear the way for them.</h2>
+    </div>
+    <div class="pos-copy">
+      <p>Nexora isn't bidding against your general contractor — we're the specialist crew GCs, developers, and property managers call in <strong>before ground gets broken.</strong> Asbestos survey came back positive. There's a structure that needs to come down. The soil needs to be tested. The ground isn't stable enough to build on yet.</p>
+      <p>We take on the regulated, high-stakes part of the project — the part that stalls timelines when it's handled by someone without the licensing or experience — and hand back a site that's documented, compliant, and ready for the next trade.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="pos-label">How a site gets from "problem" to "ready"</div>
+      <h2>Five stages. One point of contact.</h2>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <span class="step-num mono">01</span>
+        <h3>Survey</h3>
+        <p>Hazardous material and site assessment surveys, before disposal or demo work even begins.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">02</span>
+        <h3>Abate</h3>
+        <p>Licensed asbestos abatement and hazardous material removal, to WorkSafeBC standard.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">03</span>
+        <h3>Demolish</h3>
+        <p>Full and selective demolition, clearance, and disposal coordination.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">04</span>
+        <h3>Stabilize</h3>
+        <p>Excavation, site stabilization, and ground preparation for what comes next.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">05</span>
+        <h3>Clear</h3>
+        <p>Permitting, municipal coordination, and clearance documentation for handoff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="pos-label">Scope of work</div>
+      <h2>What we take off your plate</h2>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6"/></svg></div>
+        <h3>Environmental Disposal &amp; Hazmat Management</h3>
+        <p>Compliant handling and disposal coordination for hazardous and contaminated materials.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v9L12 20l-9-4.5v-9L12 2z"/><path d="M12 22V12M3 6.5l9 4.5 9-4.5"/></svg></div>
+        <h3>Asbestos Surveys &amp; Abatement</h3>
+        <p>Licensed survey and removal work, with full documentation and clearance reporting.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M4 21h16M9 21v-6h6v6"/></svg></div>
+        <h3>Demolition &amp; Renovation</h3>
+        <p>Full-structure and selective demolition, from single lots to multi-building sites.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10l7-6 7 6v11M9 21v-5h6v5"/></svg></div>
+        <h3>Excavation &amp; Site Stabilization</h3>
+        <p>Ground preparation, stabilization, and excavation work for build-ready sites.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg></div>
+        <h3>Permitting &amp; Municipal Coordination</h3>
+        <p>Managing the paperwork and approvals so your timeline doesn't stall on process.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 21c4-3 8-6.5 8-11a8 8 0 10-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Restoration Support</h3>
+        <p>Coordinated handoff to restoration and rebuild once the site is cleared and stable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sectors" id="sectors">
+  <div class="wrap reveal">
+    <div class="pos-label">Who we work with</div>
+    <h2 style="margin-top:12px; font-size:clamp(24px,3.2vw,32px); max-width:520px;">Built for the sites that can't afford delays</h2>
+    <div class="sector-row">
+      <span class="chip">Commercial</span>
+      <span class="chip">Industrial</span>
+      <span class="chip">Multi-Family Residential</span>
+      <span class="chip">Municipal</span>
+      <span class="chip">Institutional</span>
+      <span class="chip">Property Management</span>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="about">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="pos-label">Why Nexora</div>
+      <h2>Built on years on the actual site, not just in the office</h2>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-item">
+        <h3>Direct project experience</h3>
+        <p>Every job is led with hands-on experience managing environmental and demolition work for general contractors and developers across BC.</p>
+      </div>
+      <div class="trust-item">
+        <h3>Compliance-first</h3>
+        <p>WorkSafeBC licensing, site-specific procedures, and full documentation — built in, not bolted on.</p>
+      </div>
+      <div class="trust-item">
+        <h3>One point of contact</h3>
+        <p>From survey through disposal, you're working with one accountable team, not a chain of subcontractors.</p>
+      </div>
+    </div>
+    <div class="badge-row reveal">
+      <span class="badge"><span class="dot"></span>British Columbia, Canada</span>
+      <span class="badge"><span class="dot"></span>Licensed &amp; Insured</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div class="wrap cta-band-inner reveal">
+    <h2>Have a site that isn't simple?</h2>
+    <a href="mailto:info@nexoraindustries.ca" class="btn btn-primary">Request a Site Assessment →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="mark"></span>NEXORA INDUSTRIES</div>
+        <p style="max-width:280px; font-size:14px; color:rgba(244,244,239,0.6);">Construction management and environmental services for sites that need to be surveyed, cleared, and stabilized before anyone can build.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#services">Services</a>
+        <a href="#process">Our Process</a>
+        <a href="#sectors">Sectors We Serve</a>
+        <a href="#about">About Nexora</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@nexoraindustries.ca">info@nexoraindustries.ca</a>
+        <p>Surrey, British Columbia</p>
+        <p>nexoraindustries.ca</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Nexora Industries Inc.</span>
+      <span>Licensed &amp; Insured &middot; British Columbia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
