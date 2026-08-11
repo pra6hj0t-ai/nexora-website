@@ -4,59 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nexora Industries Inc. — Construction Management &amp; Environmental Services</title>
-<meta name="google-site-verification" content="H_tMG3ZX8f31MWNtbWT1roI5jUDlnmQhCsJtLltUx3M" />
-<meta name="description" content="Nexora Industries provides construction management and environmental services across British Columbia — hazardous material surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization. Serving Surrey, the Lower Mainland, Vancouver Island, and BC Interior.">
-<link rel="canonical" href="https://www.nexoraindustries.ca/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nexora Industries Inc. — Construction Management & Environmental Services">
-<meta property="og:description" content="Hazmat surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization across British Columbia. The team GCs call before anyone breaks ground.">
-<meta property="og:url" content="https://www.nexoraindustries.ca/">
-<meta property="og:locale" content="en_CA">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nexora Industries Inc. — Construction Management & Environmental Services">
-<meta name="twitter:description" content="Hazmat surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization across British Columbia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "GeneralContractor",
-  "name": "Nexora Industries Inc.",
-  "description": "Construction management and environmental services company providing hazardous material surveys, licensed asbestos abatement coordination, demolition, excavation, and site stabilization.",
-  "url": "https://www.nexoraindustries.ca/",
-  "telephone": "+1-778-706-4786",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Surrey",
-    "addressRegion": "BC",
-    "addressCountry": "CA"
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Surrey"},
-    {"@type": "AdministrativeArea", "name": "Lower Mainland, BC"},
-    {"@type": "AdministrativeArea", "name": "Vancouver Island, BC"},
-    {"@type": "AdministrativeArea", "name": "BC Interior"}
-  ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-    "opens": "07:00",
-    "closes": "19:00"
-  },
-  "priceRange": "$$",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Hazardous Material Surveys"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asbestos Abatement Coordination"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Demolition"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Excavation & Site Stabilization"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Permitting & Municipal Coordination"}}
-    ]
-  }
-}
-</script>
 <style>
   :root{
     --ink:#14171A;
@@ -96,6 +45,7 @@
   .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
   @media (max-width:640px){ .wrap{padding:0 20px;} }
 
+  /* ---------- Focus & motion ---------- */
   a:focus-visible, button:focus-visible{
     outline:2px solid var(--safety);
     outline-offset:3px;
@@ -104,6 +54,7 @@
     *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
   }
 
+  /* ---------- Top bar ---------- */
   .topbar{
     position:sticky; top:0; z-index:50;
     background:var(--ink);
@@ -165,6 +116,7 @@
     .menu-btn{display:block;}
   }
 
+  /* ---------- Hero ---------- */
   .hero{
     position:relative;
     background:var(--ink);
@@ -234,6 +186,7 @@
   }
   .btn-ghost:hover{ border-color:var(--safety); color:var(--safety); }
 
+  /* stamp */
   .stamp{
     position:absolute;
     right:6%; bottom:8%;
@@ -253,6 +206,7 @@
   .stamp-inner .t3{font-family:'IBM Plex Mono',monospace; font-size:9px; letter-spacing:0.1em;}
   @media (max-width:900px){ .stamp{display:none;} }
 
+  /* ---------- Positioning strip ---------- */
   .positioning{
     background:var(--paper-white);
     border-bottom:1px solid var(--line);
@@ -285,6 +239,7 @@
   }
   .pos-copy strong{color:var(--ink);}
 
+  /* ---------- Process ---------- */
   .process{padding:100px 0; background:var(--paper);}
   .section-head{margin-bottom:56px; max-width:640px;}
   .section-head .pos-label{margin-bottom:14px;}
@@ -318,6 +273,7 @@
   .step h3{font-size:17px; margin-bottom:10px; letter-spacing:0.02em;}
   .step p{color:var(--concrete); font-size:14px; line-height:1.5;}
 
+  /* ---------- Services ---------- */
   .services{padding:100px 0; background:var(--ink); color:var(--paper-white);}
   .services .pos-label{color:var(--safety);}
   .services .pos-label::before{background:var(--safety);}
@@ -345,6 +301,7 @@
   .svc-card h3{ font-size:16px; margin-bottom:10px; letter-spacing:0.02em; }
   .svc-card p{ color:rgba(244,244,239,0.6); font-size:14px; }
 
+  /* ---------- Sectors ---------- */
   .sectors{ padding:80px 0; background:var(--paper-white); border-bottom:1px solid var(--line); }
   .sector-row{
     display:flex; flex-wrap:wrap; gap:12px;
@@ -360,6 +317,7 @@
     background:var(--paper);
   }
 
+  /* ---------- Why / trust ---------- */
   .trust{ padding:100px 0; background:var(--paper); }
   .trust-grid{
     display:grid;
@@ -382,6 +340,7 @@
   }
   .badge .dot{ width:6px; height:6px; background:var(--rust); border-radius:50%; }
 
+  /* ---------- CTA band ---------- */
   .cta-band{
     background:var(--safety);
     color:var(--ink);
@@ -394,6 +353,7 @@
   .cta-band h2{ font-size:clamp(26px,4vw,40px); max-width:520px; }
   .cta-band .btn-primary{ background:var(--ink); color:var(--safety); border-color:var(--ink); }
 
+  /* ---------- Footer ---------- */
   footer{ background:var(--ink); color:rgba(244,244,239,0.7); padding:56px 0 32px; }
   .foot-grid{
     display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;
@@ -409,8 +369,75 @@
     display:flex; justify-content:space-between; padding-top:22px; font-size:12.5px; color:rgba(244,244,239,0.4); flex-wrap:wrap; gap:10px;
   }
 
+  /* ---------- Reveal on scroll ---------- */
   .reveal{ opacity:0; transform:translateY(16px); transition:opacity .5s ease, transform .5s ease; }
   .reveal.in{ opacity:1; transform:none; }
+
+  /* ---------- Chat widget ---------- */
+  #nexora-chat-bubble{
+    position:fixed; right:22px; bottom:22px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--safety); border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.28);
+    transition:transform .15s ease;
+  }
+  #nexora-chat-bubble:hover{ transform:scale(1.06); }
+  #nexora-chat-bubble svg{ width:26px; height:26px; stroke:var(--ink); fill:none; stroke-width:2; }
+
+  #nexora-chat-panel{
+    position:fixed; right:22px; bottom:92px; z-index:200;
+    width:340px; max-width:calc(100vw - 44px);
+    height:460px; max-height:calc(100vh - 140px);
+    background:var(--ink); border:1px solid var(--line-on-dark);
+    display:flex; flex-direction:column;
+    box-shadow:0 12px 40px rgba(0,0,0,0.4);
+    opacity:0; transform:translateY(12px) scale(0.98); pointer-events:none;
+    transition:opacity .18s ease, transform .18s ease;
+  }
+  #nexora-chat-panel.open{ opacity:1; transform:none; pointer-events:auto; }
+
+  .chat-header{
+    padding:16px 18px; border-bottom:1px solid var(--line-on-dark);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .chat-header-title{ display:flex; align-items:center; gap:10px; }
+  .chat-header-title .dot{ width:8px; height:8px; background:var(--safety); border-radius:50%; }
+  .chat-header-title span{ color:var(--paper-white); font-family:'Oswald',sans-serif; font-size:14px; letter-spacing:0.03em; text-transform:uppercase; }
+  .chat-header-sub{ font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(244,244,239,0.5); margin-top:2px; }
+  #nexora-chat-close{ background:none; border:none; color:rgba(244,244,239,0.6); font-size:20px; cursor:pointer; line-height:1; padding:0 4px; }
+  #nexora-chat-close:hover{ color:var(--safety); }
+
+  #nexora-chat-messages{
+    flex:1; overflow-y:auto; padding:16px 18px; display:flex; flex-direction:column; gap:12px;
+  }
+  .chat-msg{ font-size:13.5px; line-height:1.5; max-width:88%; }
+  .chat-msg.bot{ color:rgba(244,244,239,0.88); align-self:flex-start; }
+  .chat-msg.user{ color:var(--ink); background:var(--safety); align-self:flex-end; padding:8px 12px; border-radius:2px; }
+  .chat-msg.bot .bubble{ background:var(--ink-soft); padding:8px 12px; border-radius:2px; display:inline-block; }
+  .chat-msg.typing .bubble{ color:rgba(244,244,239,0.5); font-style:italic; }
+
+  .chat-input-row{
+    border-top:1px solid var(--line-on-dark); padding:10px; display:flex; gap:8px;
+  }
+  #nexora-chat-input{
+    flex:1; background:var(--ink-soft); border:1px solid var(--line-on-dark);
+    color:var(--paper-white); font-family:'Inter',sans-serif; font-size:13.5px;
+    padding:10px 12px; resize:none; outline:none;
+  }
+  #nexora-chat-input:focus{ border-color:var(--safety); }
+  #nexora-chat-send{
+    background:var(--safety); border:none; color:var(--ink); width:40px;
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+  }
+  #nexora-chat-send:hover{ opacity:0.9; }
+  #nexora-chat-send svg{ width:16px; height:16px; }
+  #nexora-chat-send:disabled{ opacity:0.5; cursor:default; }
+
+  @media (max-width:480px){
+    #nexora-chat-panel{ right:12px; left:12px; width:auto; bottom:84px; }
+    #nexora-chat-bubble{ right:16px; bottom:16px; }
+  }
 </style>
 </head>
 <body>
@@ -424,7 +451,6 @@
       <a href="#process">Process</a>
       <a href="#sectors">Sectors</a>
       <a href="#about">About</a>
-      <a href="/blog/">Blog</a>
       <a href="#contact" class="nav-cta">Request a Quote</a>
     </nav>
   </div>
@@ -495,7 +521,7 @@
       <div class="step">
         <span class="step-num mono">02</span>
         <h3>Abate</h3>
-        <p>Licensed asbestos abatement and hazardous material removal, to WorkSafeBC standard.</p>
+        <p>Hazardous material clearance — the stage that most often delays a build — surveyed, documented, and resolved before it affects your schedule.</p>
       </div>
       <div class="step">
         <span class="step-num mono">03</span>
@@ -531,7 +557,7 @@
       <div class="svc-card">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l9 4.5v9L12 20l-9-4.5v-9L12 2z"/><path d="M12 22V12M3 6.5l9 4.5 9-4.5"/></svg></div>
         <h3>Asbestos Surveys &amp; Abatement</h3>
-        <p>Licensed survey and removal work, with full documentation and clearance reporting.</p>
+        <p>Hazardous material findings are one of the most common sources of project delay for developers and GCs. Nexora identifies, clears, and documents them early — keeping your timeline intact.</p>
       </div>
       <div class="svc-card">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12M4 21h16M9 21v-6h6v6"/></svg></div>
@@ -572,6 +598,17 @@
   </div>
 </section>
 
+<section class="sectors" id="network" style="border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--paper);">
+  <div class="wrap reveal">
+    <div class="pos-label">Built for collaboration</div>
+    <h2 style="margin-top:12px; font-size:clamp(24px,3.2vw,32px); max-width:640px;">One name. A growing network of trades.</h2>
+    <p style="max-width:600px; color:var(--concrete); font-size:16px; margin-top:18px;">Nexora coordinates a network of vetted, licensed contractors — brought in project by project, matched to the right scope, and backed by one point of accountability. When work in your trade comes through Nexora, our network hears about it first.</p>
+    <div class="cta-row" style="margin-top:28px;">
+      <a href="mailto:nexoraindustriesinc@gmail.com?subject=Contractor%20Network%20Inquiry" class="btn btn-ghost" style="border-color:var(--ink); color:var(--ink);">Join Our Contractor Network →</a>
+    </div>
+  </div>
+</section>
+
 <section class="trust" id="about">
   <div class="wrap">
     <div class="section-head reveal">
@@ -595,19 +632,6 @@
     <div class="badge-row reveal">
       <span class="badge"><span class="dot"></span>British Columbia, Canada</span>
       <span class="badge"><span class="dot"></span>Licensed &amp; Insured</span>
-    </div>
-  </div>
-</section>
-
-<section class="founder" id="founder" style="padding:80px 0; background:var(--paper-white); border-bottom:1px solid var(--line);">
-  <div class="wrap reveal">
-    <div class="pos-label">Leadership</div>
-    <h2 style="margin-top:12px; font-size:clamp(24px,3.2vw,32px); max-width:560px;">Led by someone who's actually run the work</h2>
-    <div style="max-width:640px; margin-top:20px;">
-      <p style="color:var(--concrete); font-size:16px; margin-bottom:14px;"><strong style="color:var(--ink);">Prabhjot Badesha</strong> — Founder &amp; President</p>
-      <p style="color:var(--concrete); font-size:16px; margin-bottom:14px;">Prabhjot founded Nexora Industries after years of hands-on experience managing environmental and demolition projects for general contractors and developers across British Columbia. That background includes site supervision, WorkSafeBC compliance, and coordination of licensed trade contractors across residential, commercial, and institutional projects.</p>
-      <p style="color:var(--concrete); font-size:16px; margin-bottom:20px;">Nexora was founded on that operating experience — bringing the same standard of site accountability to every project the company takes on.</p>
-      <a href="https://www.linkedin.com/in/prabh-badesha-625545114" target="_blank" rel="noopener" class="btn btn-ghost" style="border-color:var(--ink); color:var(--ink); display:inline-flex;">Connect on LinkedIn →</a>
     </div>
   </div>
 </section>
@@ -638,7 +662,6 @@
         <a href="mailto:nexoraindustriesinc@gmail.com">nexoraindustriesinc@gmail.com</a>
         <p>Surrey, British Columbia</p>
         <p>nexoraindustries.ca</p>
-        <a href="https://g.page/r/CcDOGltT7jCvEBM/review" target="_blank" rel="noopener">Leave us a Google Review →</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -649,16 +672,128 @@
 </footer>
 
 <script>
+  // mobile nav toggle
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('nav');
   menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
+  // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
+</script>
+
+<!-- Nexora Virtual Assistant -->
+<button id="nexora-chat-bubble" aria-label="Open Nexora Assistant">
+  <svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.35 0-2.62-.3-3.76-.85L3 21l1.85-5.74A8.5 8.5 0 1121 11.5z"/></svg>
+</button>
+
+<div id="nexora-chat-panel">
+  <div class="chat-header">
+    <div class="chat-header-title">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px;"><span class="dot"></span><span>Nexora Assistant</span></div>
+        <div class="chat-header-sub">Usually replies in a few seconds</div>
+      </div>
+    </div>
+    <button id="nexora-chat-close" aria-label="Close chat">&times;</button>
+  </div>
+  <div id="nexora-chat-messages"></div>
+  <div class="chat-input-row">
+    <textarea id="nexora-chat-input" rows="1" placeholder="Ask about hazmat, demo, permitting..."></textarea>
+    <button id="nexora-chat-send" aria-label="Send message">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const bubble = document.getElementById('nexora-chat-bubble');
+  const panel = document.getElementById('nexora-chat-panel');
+  const closeBtn = document.getElementById('nexora-chat-close');
+  const messagesEl = document.getElementById('nexora-chat-messages');
+  const input = document.getElementById('nexora-chat-input');
+  const sendBtn = document.getElementById('nexora-chat-send');
+
+  const ENDPOINT = '/.netlify/functions/chat';
+  let history = [];
+  let opened = false;
+
+  function addMessage(role, text){
+    const row = document.createElement('div');
+    row.className = 'chat-msg ' + (role === 'user' ? 'user' : 'bot');
+    if (role === 'user'){
+      row.textContent = text;
+    } else {
+      const bubbleEl = document.createElement('div');
+      bubbleEl.className = 'bubble';
+      bubbleEl.textContent = text;
+      row.appendChild(bubbleEl);
+    }
+    messagesEl.appendChild(row);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return row;
+  }
+
+  function greet(){
+    if (messagesEl.children.length) return;
+    addMessage('bot', "Hi, I'm Nexora's assistant. Ask me about hazmat surveys, demolition, excavation, permitting, or how Nexora coordinates your project.");
+  }
+
+  bubble.addEventListener('click', () => {
+    opened = !opened;
+    panel.classList.toggle('open', opened);
+    if (opened){ greet(); input.focus(); }
+  });
+  closeBtn.addEventListener('click', () => { opened = false; panel.classList.remove('open'); });
+
+  async function sendMessage(){
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    sendBtn.disabled = true;
+
+    addMessage('user', text);
+    history.push({ role: 'user', content: text });
+
+    const typingRow = addMessage('bot', 'Typing...');
+    typingRow.classList.add('typing');
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history })
+      });
+      const data = await res.json();
+      typingRow.remove();
+
+      if (!res.ok || data.error){
+        addMessage('bot', "Sorry, I'm having trouble connecting right now. Please email nexoraindustriesinc@gmail.com or call 604-906-0060.");
+      } else {
+        addMessage('bot', data.reply || "I'm not sure — please reach out at nexoraindustriesinc@gmail.com.");
+        history.push({ role: 'assistant', content: data.reply });
+      }
+    } catch (e){
+      typingRow.remove();
+      addMessage('bot', "Sorry, I'm having trouble connecting right now. Please email nexoraindustriesinc@gmail.com or call 604-906-0060.");
+    } finally {
+      sendBtn.disabled = false;
+    }
+  }
+
+  sendBtn.addEventListener('click', sendMessage);
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey){
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+})();
 </script>
 
 </body>
