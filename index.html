@@ -695,18 +695,27 @@
   <div class="chat-header">
     <div class="chat-header-title">
       <div>
-        <div style="display:flex; align-items:center; gap:8px;"><span class="dot"></span><span>Nexora Assistant</span></div>
-        <div class="chat-header-sub">Usually replies in a few seconds</div>
+        <div style="display:flex; align-items:center; gap:8px;"><span class="dot"></span><span>Message Nexora</span></div>
+        <div class="chat-header-sub">We'll reply within one business day</div>
       </div>
     </div>
     <button id="nexora-chat-close" aria-label="Close chat">&times;</button>
   </div>
   <div id="nexora-chat-messages"></div>
-  <div class="chat-input-row">
-    <textarea id="nexora-chat-input" rows="1" placeholder="Ask about hazmat, demo, permitting..."></textarea>
-    <button id="nexora-chat-send" aria-label="Send message">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-    </button>
+  <form name="nexora-chat-lead" method="POST" data-netlify="true" netlify-honeypot="nexora-hp" id="nexora-chat-form" style="display:none">
+    <input type="hidden" name="form-name" value="nexora-chat-lead" />
+    <input type="text" name="nexora-hp" />
+    <input type="text" name="contact" />
+    <textarea name="message"></textarea>
+  </form>
+  <div class="chat-input-row" style="flex-direction:column; gap:8px; align-items:stretch;">
+    <input id="nexora-chat-contact" type="text" placeholder="Your email or phone (so we can reply)" style="background:var(--ink-soft); border:1px solid var(--line-on-dark); color:var(--paper-white); font-family:'Inter',sans-serif; font-size:12.5px; padding:8px 10px; outline:none;">
+    <div style="display:flex; gap:8px;">
+      <textarea id="nexora-chat-input" rows="1" placeholder="What can we help with?" style="flex:1; background:var(--ink-soft); border:1px solid var(--line-on-dark); color:var(--paper-white); font-family:'Inter',sans-serif; font-size:13.5px; padding:10px 12px; resize:none; outline:none;"></textarea>
+      <button id="nexora-chat-send" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -717,10 +726,9 @@
   const closeBtn = document.getElementById('nexora-chat-close');
   const messagesEl = document.getElementById('nexora-chat-messages');
   const input = document.getElementById('nexora-chat-input');
+  const contactInput = document.getElementById('nexora-chat-contact');
   const sendBtn = document.getElementById('nexora-chat-send');
 
-  const ENDPOINT = '/.netlify/functions/chat';
-  let history = [];
   let opened = false;
 
   function addMessage(role, text){
@@ -741,7 +749,7 @@
 
   function greet(){
     if (messagesEl.children.length) return;
-    addMessage('bot', "Hi, I'm Nexora's assistant. Ask me about hazmat surveys, demolition, excavation, permitting, or how Nexora coordinates your project.");
+    addMessage('bot', "Hi, I'm the Nexora team. Leave your question and the best way to reach you, and we'll get back to you shortly.");
   }
 
   bubble.addEventListener('click', () => {
@@ -751,36 +759,34 @@
   });
   closeBtn.addEventListener('click', () => { opened = false; panel.classList.remove('open'); });
 
+  function encodeForm(data){
+    return Object.keys(data).map(key =>
+      encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+    ).join('&');
+  }
+
   async function sendMessage(){
     const text = input.value.trim();
+    const contact = contactInput.value.trim();
     if (!text) return;
     input.value = '';
     sendBtn.disabled = true;
 
     addMessage('user', text);
-    history.push({ role: 'user', content: text });
-
-    const typingRow = addMessage('bot', 'Typing...');
-    typingRow.classList.add('typing');
 
     try {
-      const res = await fetch(ENDPOINT, {
+      await fetch('/', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history })
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeForm({
+          'form-name': 'nexora-chat-lead',
+          'contact': contact,
+          'message': text
+        })
       });
-      const data = await res.json();
-      typingRow.remove();
-
-      if (!res.ok || data.error){
-        addMessage('bot', "Sorry, I'm having trouble connecting right now. Please email nexoraindustriesinc@gmail.com or call 604-906-0060.");
-      } else {
-        addMessage('bot', data.reply || "I'm not sure — please reach out at nexoraindustriesinc@gmail.com.");
-        history.push({ role: 'assistant', content: data.reply });
-      }
+      addMessage('bot', "Thanks — we've got your message and will follow up soon. You can also reach us directly at nexoraindustriesinc@gmail.com or 604-906-0060.");
     } catch (e){
-      typingRow.remove();
-      addMessage('bot', "Sorry, I'm having trouble connecting right now. Please email nexoraindustriesinc@gmail.com or call 604-906-0060.");
+      addMessage('bot', "Sorry, something went wrong sending that. Please email nexoraindustriesinc@gmail.com or call 604-906-0060 directly.");
     } finally {
       sendBtn.disabled = false;
     }
