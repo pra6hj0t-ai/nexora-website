@@ -11,6 +11,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.nexoraindustries.ca/blog/surrey-demolition-permit-timeline.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nexoraindustries.ca/blog/hazmat-survey-came-back-positive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.nexoraindustries.ca/blog/who-is-responsible-for-abatement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.nexoraindustries.ca/guides/fire-damaged-asbestos-guide.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
