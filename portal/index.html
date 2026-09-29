@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Compliance Check — Nexora Industries Inc.</title>
+<meta name="description" content="Answer five questions about your site and get a plain-English read on where your project stands, what generally applies, and what to confirm with WorkSafeBC.">
+<link rel="canonical" href="https://www.nexoraindustries.ca/portal/">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14171A; --ink-soft:#1F2327; --paper:#E7E8E1; --paper-white:#F4F4EF;
+    --safety:#F2B705; --steel:#3C4A54; --rust:#B54A24; --concrete:#82847C;
+    --line:rgba(20,23,26,0.14); --line-on-dark:rgba(244,244,239,0.16);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--paper); color:var(--ink); font-family:'Inter',sans-serif; font-size:16px; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:'Oswald',sans-serif; text-transform:uppercase; letter-spacing:0.01em; font-weight:600; line-height:1.15; }
+  .mono{ font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em; }
+  a{ color:inherit; text-decoration:none; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 32px; }
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{ outline:2px solid var(--safety); outline-offset:3px; }
+
+  .topbar{ background:var(--ink); border-bottom:1px solid var(--line-on-dark); }
+  .topbar-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 32px; max-width:1180px; margin:0 auto; }
+  .logo{ color:var(--paper-white); font-family:'Oswald',sans-serif; font-weight:700; font-size:19px; letter-spacing:0.04em; display:flex; align-items:center; gap:10px; }
+  .logo .mark{ width:11px; height:11px; background:var(--safety); transform:rotate(45deg); flex:none; }
+  .back-link{ color:var(--paper-white); font-size:13px; font-family:'IBM Plex Mono',monospace; letter-spacing:0.05em; text-transform:uppercase; opacity:0.75; }
+  .back-link:hover{ opacity:1; color:var(--safety); }
+
+  .hero{ background:var(--ink); color:var(--paper-white); padding:56px 0 48px; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--safety); margin-bottom:20px; }
+  .eyebrow::before{ content:''; width:26px; height:1px; background:var(--safety); }
+  .hero h1{ font-size:clamp(28px,4.6vw,42px); max-width:600px; }
+  .hero p{ margin-top:16px; color:rgba(244,244,239,0.72); max-width:520px; font-size:16px; }
+
+  .panel{ padding:48px 0 72px; }
+  .card{ background:var(--paper-white); border:1px solid var(--line); padding:32px; }
+  @media (max-width:640px){ .card{ padding:22px; } }
+  .card h2{ font-size:20px; margin-bottom:8px; }
+  .card .sub{ color:var(--concrete); font-size:14.5px; margin-bottom:24px; }
+
+  label.field{ display:block; margin-bottom:16px; }
+  label.field span{ display:block; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--steel); margin-bottom:6px; }
+  input[type=text], input[type=email], input[type=tel], textarea{
+    width:100%; background:#fff; border:1px solid var(--line); color:var(--ink);
+    font-family:'Inter',sans-serif; font-size:15px; padding:11px 13px; outline:none;
+  }
+  input:focus, textarea:focus{ border-color:var(--safety); }
+  textarea{ resize:vertical; min-height:80px; }
+
+  .btn{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; letter-spacing:0.05em;
+    text-transform:uppercase; padding:14px 24px; border:1px solid var(--ink);
+    background:var(--ink); color:var(--safety); cursor:pointer;
+    display:inline-flex; align-items:center; gap:10px; transition:transform .15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn:disabled{ opacity:0.5; cursor:default; transform:none; }
+  .btn-quiet{ background:none; color:var(--ink); }
+
+  .q{ margin-bottom:28px; }
+  .q > p{ font-family:'Oswald',sans-serif; text-transform:uppercase; font-size:15px; letter-spacing:0.02em; margin-bottom:12px; }
+  .opts{ display:flex; flex-wrap:wrap; gap:8px; }
+  .opt{
+    font-size:14px; padding:10px 15px; border:1px solid var(--line);
+    background:#fff; color:var(--steel); cursor:pointer; font-family:'Inter',sans-serif;
+    transition:border-color .12s ease, background .12s ease, color .12s ease;
+  }
+  .opt:hover{ border-color:var(--concrete); }
+  .opt[aria-pressed="true"]{ background:var(--ink); color:var(--safety); border-color:var(--ink); }
+
+  .progress{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--concrete); margin-bottom:22px; }
+
+  .result-head{ border-bottom:2px solid var(--ink); padding-bottom:14px; margin-bottom:22px; }
+  .result-head h2{ font-size:22px; }
+  .flag{ display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; padding:4px 10px; margin-bottom:12px; }
+  .flag.routine{ background:var(--line); color:var(--steel); }
+  .flag.attention{ background:var(--safety); color:var(--ink); }
+  .flag.urgent{ background:var(--rust); color:#fff; }
+
+  .rsec{ margin-bottom:26px; }
+  .rsec h3{ font-size:14px; margin-bottom:10px; letter-spacing:0.03em; }
+  .rsec ul{ margin:0 0 0 20px; }
+  .rsec li{ margin-bottom:8px; font-size:15.5px; }
+  .nextstep{ background:var(--paper); border-left:3px solid var(--safety); padding:18px 20px; font-size:15.5px; }
+
+  .disclaimer{ margin-top:28px; padding-top:18px; border-top:1px solid var(--line); font-size:13.5px; color:var(--concrete); line-height:1.6; }
+  .disclaimer strong{ color:var(--steel); }
+
+  .err{ background:#fff; border-left:3px solid var(--rust); padding:16px 18px; font-size:14.5px; color:var(--ink); margin-bottom:18px; }
+  .hidden{ display:none !important; }
+
+  footer{ background:var(--ink); color:rgba(244,244,239,0.5); padding:32px 0; font-size:12.5px; }
+  .foot-inner{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+  .foot-inner a{ color:rgba(244,244,239,0.7); }
+  .foot-inner a:hover{ color:var(--safety); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="/" class="logo"><span class="mark"></span>NEXORA INDUSTRIES</a>
+    <a href="/#contact" class="back-link">Contact</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Client Portal</div>
+    <h1>Project Compliance Check</h1>
+    <p>Five questions about your site. You'll get a plain-English read on where the project stands, what generally applies at this stage, and what to confirm with WorkSafeBC directly.</p>
+  </div>
+</section>
+
+<section class="panel">
+  <div class="wrap">
+
+    <!-- Netlify form registration (hidden, JS posts to it) -->
+    <form name="portal-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="hidden">
+      <input type="hidden" name="form-name" value="portal-access" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" /><input type="text" name="company" />
+      <input type="email" name="email" /><input type="tel" name="phone" />
+      <input type="text" name="situation" /><input type="text" name="notes" />
+    </form>
+
+    <!-- STEP 1: access -->
+    <div class="card" id="gate">
+      <h2>Start your assessment</h2>
+      <p class="sub">So we know who to follow up with, and so we can pick up the thread if you'd like us to.</p>
+      <div id="gate-error"></div>
+      <label class="field"><span>Your name</span><input type="text" id="f-name" autocomplete="name"></label>
+      <label class="field"><span>Company</span><input type="text" id="f-company" autocomplete="organization"></label>
+      <label class="field"><span>Email</span><input type="email" id="f-email" autocomplete="email"></label>
+      <label class="field"><span>Phone (optional)</span><input type="tel" id="f-phone" autocomplete="tel"></label>
+      <button class="btn" id="gate-btn">Continue →</button>
+    </div>
+
+    <!-- STEP 2: questions -->
+    <div class="card hidden" id="quiz">
+      <div class="progress mono" id="progress">Question 1 of 5</div>
+      <div id="questions"></div>
+      <label class="field"><span>Anything else about the site (optional)</span><textarea id="f-notes" maxlength="300" placeholder="Brief context — 300 characters max"></textarea></label>
+      <button class="btn" id="submit-btn" disabled>Get my assessment →</button>
+    </div>
+
+    <!-- STEP 3: result -->
+    <div class="card hidden" id="result">
+      <div class="result-head">
+        <span class="flag" id="r-flag"></span>
+        <h2 id="r-stage"></h2>
+      </div>
+      <div class="rsec"><h3>What generally applies at this stage</h3><ul id="r-applies"></ul></div>
+      <div class="rsec"><h3>Confirm these directly</h3><ul id="r-confirm"></ul></div>
+      <div class="rsec"><h3>What Nexora would coordinate</h3><ul id="r-nexora"></ul></div>
+      <div class="nextstep" id="r-next"></div>
+      <div class="disclaimer">
+        <strong>This is orientation, not compliance advice.</strong> It describes how projects like yours generally proceed. It is not a regulatory determination and does not replace a site-specific assessment by a qualified person. Requirements are set by WorkSafeBC and your municipality and change over time — confirm anything specific with them directly before acting.
+      </div>
+      <div style="margin-top:24px;">
+        <a href="mailto:nexoraindustriesinc@gmail.com?subject=Project%20Compliance%20Check%20follow-up" class="btn">Talk this through with Nexora</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <span>&copy; 2026 Nexora Industries Inc.</span>
+    <a href="/">nexoraindustries.ca</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var QUESTIONS = [
+    { key:'situation', label:'What is happening on the site?', opts:[
+      ['planning-demolition','Planning a demolition'],
+      ['planning-renovation','Planning a renovation'],
+      ['survey-positive','Survey came back positive'],
+      ['material-disturbed','Something was disturbed unexpectedly'],
+      ['due-diligence','Due diligence before purchase']
+    ]},
+    { key:'buildingAge', label:'Roughly when was it built?', opts:[
+      ['pre-1990','Before 1990'],
+      ['1990-2000','1990 to 2000'],
+      ['post-2000','After 2000'],
+      ['unknown','Not sure']
+    ]},
+    { key:'surveyStatus', label:'Has a hazardous materials survey been done?', opts:[
+      ['complete','Yes, a full survey'],
+      ['partial','Partial or limited'],
+      ['none','No'],
+      ['unknown','Not sure']
+    ]},
+    { key:'workStarted', label:'Has work started on site?', opts:[
+      ['not-started','Not yet'],
+      ['in-progress','Yes, in progress'],
+      ['disturbance-occurred','Yes, and material was disturbed']
+    ]},
+    { key:'propertyType', label:'What kind of property?', opts:[
+      ['single-family','Single-family'],
+      ['multi-family','Multi-family'],
+      ['commercial','Commercial'],
+      ['industrial','Industrial'],
+      ['institutional','Institutional']
+    ]}
+  ];
+
+  var answers = {};
+  var lead = {};
+  var attempts = 0;
+  var MAX_ATTEMPTS = 5;
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  function encodeForm(data){
+    return Object.keys(data).map(function(k){
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+    }).join('&');
+  }
+
+  function showError(containerId, msg){
+    $(containerId).innerHTML = '<div class="err">' + msg + '</div>';
+  }
+
+  // ---- Step 1: gate ----
+  $('gate-btn').addEventListener('click', function(){
+    var name = $('f-name').value.trim();
+    var company = $('f-company').value.trim();
+    var email = $('f-email').value.trim();
+    var phone = $('f-phone').value.trim();
+
+    if (!name || !company || !email || email.indexOf('@') === -1){
+      showError('gate-error', 'Please add your name, company, and a valid email address.');
+      return;
+    }
+    $('gate-error').innerHTML = '';
+    lead = { name:name, company:company, email:email, phone:phone };
+
+    $('gate').classList.add('hidden');
+    $('quiz').classList.remove('hidden');
+    renderQuestions();
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+
+  // ---- Step 2: questions ----
+  function renderQuestions(){
+    var html = '';
+    QUESTIONS.forEach(function(q){
+      html += '<div class="q"><p>' + q.label + '</p><div class="opts">';
+      q.opts.forEach(function(o){
+        html += '<button type="button" class="opt" data-key="' + q.key +
+                '" data-val="' + o[0] + '" aria-pressed="false">' + o[1] + '</button>';
+      });
+      html += '</div></div>';
+    });
+    $('questions').innerHTML = html;
+
+    Array.prototype.forEach.call($('questions').querySelectorAll('.opt'), function(btn){
+      btn.addEventListener('click', function(){
+        var key = btn.getAttribute('data-key');
+        Array.prototype.forEach.call(
+          $('questions').querySelectorAll('.opt[data-key="' + key + '"]'),
+          function(sib){ sib.setAttribute('aria-pressed','false'); }
+        );
+        btn.setAttribute('aria-pressed','true');
+        answers[key] = btn.getAttribute('data-val');
+        updateProgress();
+      });
+    });
+  }
+
+  function updateProgress(){
+    var done = Object.keys(answers).length;
+    $('progress').textContent = done >= QUESTIONS.length
+      ? 'All five answered'
+      : 'Answered ' + done + ' of ' + QUESTIONS.length;
+    $('submit-btn').disabled = done < QUESTIONS.length;
+  }
+
+  // ---- Step 3: submit ----
+  $('submit-btn').addEventListener('click', function(){
+    if (attempts >= MAX_ATTEMPTS){
+      showError('questions', 'You have reached the limit for this session. Email nexoraindustriesinc@gmail.com and we will pick it up from here.');
+      return;
+    }
+    attempts++;
+
+    var notes = $('f-notes').value.trim().slice(0,300);
+    var btn = $('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Working through it…';
+
+    // Record the lead (fire and forget — never block the assessment on this)
+    try {
+      fetch('/', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/x-www-form-urlencoded' },
+        body: encodeForm({
+          'form-name':'portal-access',
+          name: lead.name, company: lead.company,
+          email: lead.email, phone: lead.phone,
+          situation: answers.situation || '', notes: notes
+        })
+      }).catch(function(){});
+    } catch(e){}
+
+    fetch('/.netlify/functions/triage', {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        situation: answers.situation,
+        buildingAge: answers.buildingAge,
+        surveyStatus: answers.surveyStatus,
+        workStarted: answers.workStarted,
+        propertyType: answers.propertyType,
+        notes: notes
+      })
+    })
+    .then(function(r){ return r.json().then(function(j){ return { ok:r.ok, body:j }; }); })
+    .then(function(res){
+      btn.disabled = false;
+      btn.textContent = 'Get my assessment →';
+      if (!res.ok || !res.body.result){
+        showError('questions', 'We could not generate the assessment just now. Email nexoraindustriesinc@gmail.com or call 604-906-0060 and we will walk you through it.');
+        return;
+      }
+      render(res.body.result);
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.textContent = 'Get my assessment →';
+      showError('questions', 'Connection problem. Email nexoraindustriesinc@gmail.com or call 604-906-0060.');
+    });
+  });
+
+  function list(el, items){
+    var ul = $(el);
+    ul.innerHTML = '';
+    (items || []).forEach(function(t){
+      var li = document.createElement('li');
+      li.textContent = t;
+      ul.appendChild(li);
+    });
+  }
+
+  function render(r){
+    var flag = $('r-flag');
+    var level = ['routine','attention','urgent'].indexOf(r.urgency) > -1 ? r.urgency : 'routine';
+    flag.className = 'flag ' + level;
+    flag.textContent = level === 'urgent' ? 'Needs immediate attention'
+                     : level === 'attention' ? 'Worth acting on now'
+                     : 'Routine';
+    $('r-stage').textContent = r.stage || 'Your project';
+    list('r-applies', r.whatApplies);
+    list('r-confirm', r.confirmWith);
+    list('r-nexora', r.nexoraHandles);
+    $('r-next').textContent = r.nextStep || '';
+
+    $('quiz').classList.add('hidden');
+    $('result').classList.remove('hidden');
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
+})();
+</script>
+
+</body>
+</html>
