@@ -127,6 +127,7 @@
       <input type="text" name="name" /><input type="text" name="company" />
       <input type="email" name="email" /><input type="tel" name="phone" />
       <input type="text" name="situation" /><input type="text" name="notes" />
+      <input type="text" name="urgency" /><input type="text" name="stage" />
     </form>
 
     <!-- STEP 1: access -->
@@ -215,8 +216,6 @@
 
   var answers = {};
   var lead = {};
-  var attempts = 0;
-  var MAX_ATTEMPTS = 5;
 
   var $ = function(id){ return document.getElementById(id); };
 
@@ -285,20 +284,159 @@
     $('submit-btn').disabled = done < QUESTIONS.length;
   }
 
+  // ---- Rules engine (runs in the page — no API call) ----
+  var SITUATIONS = {
+    'planning-demolition': {
+      stage: "Front end of a demolition — the stage where sequencing decides your timeline.",
+      applies: [
+        "A hazardous materials survey by a qualified person generally comes before demolition work begins.",
+        "Utility disconnections are booked through separate organizations and usually cannot be rushed. Book them in parallel, not one after another.",
+        "Municipal demolition permits typically ask for the survey and disconnection confirmations as part of the application.",
+        "If regulated material is found, removal happens before demolition, by licensed contractors, with clearance documented."
+      ],
+      nexora: [
+        "Engaging and managing the qualified consultant who carries out the survey",
+        "Coordinating licensed abatement contractors if the survey finds regulated material",
+        "Assembling the permit package and handling municipal correspondence",
+        "Holding the schedule across trades so the handoff to demolition is clean"
+      ]
+    },
+    'planning-renovation': {
+      stage: "Planning renovation work — how much you disturb drives everything else.",
+      applies: [
+        "Renovation that disturbs building materials generally carries the same survey expectations as demolition.",
+        "The survey scope should match your actual work area, including layers you plan to cut, drill, or remove.",
+        "Occupied buildings add containment and occupant-protection considerations that vacant ones do not.",
+        "Material left intact and undisturbed is treated differently from material you intend to remove."
+      ],
+      nexora: [
+        "Scoping the survey against your actual renovation footprint",
+        "Coordinating licensed contractors for any removal the survey triggers",
+        "Managing containment planning where the building stays occupied",
+        "Keeping the documentation together for handoff back to your trades"
+      ]
+    },
+    'survey-positive': {
+      stage: "Survey found regulated material — an ordinary outcome that changes sequence, not feasibility.",
+      applies: [
+        "A positive result is expected in most buildings of this era. It does not stop the project.",
+        "The report should give locations, approximate quantities, and condition. Without those you cannot scope or price removal, and neither can anyone bidding it.",
+        "Removal is carried out by licensed contractors using certified workers, under containment appropriate to the material.",
+        "Independent clearance and disposal records are what let the next trade start."
+      ],
+      nexora: [
+        "Translating the survey findings into a defined removal scope",
+        "Engaging and managing the licensed abatement contractor",
+        "Arranging clearance through a party independent of the removal",
+        "Assembling the clearance and disposal package for your records"
+      ]
+    },
+    'material-disturbed': {
+      stage: "Material may have been disturbed without controls — this needs action today.",
+      applies: [
+        "Stop work in the affected area before anyone continues. Further disturbance widens the problem.",
+        "Keep people out of the area. Do not sweep it, do not vacuum with standard equipment, and do not move the debris.",
+        "Get a qualified person to assess the area before any cleanup decision is made.",
+        "An uncontrolled disturbance can turn a contained removal into a much larger and more expensive decontamination."
+      ],
+      nexora: [
+        "Arranging a qualified assessment of the affected area urgently",
+        "Coordinating licensed contractors for controlled decontamination",
+        "Managing clearance before anyone re-enters or work resumes",
+        "Documenting what happened and how it was resolved"
+      ]
+    },
+    'due-diligence': {
+      stage: "Assessing a property before committing — the cheapest point to find out what is in it.",
+      applies: [
+        "A survey arranged before closing, with the seller's cooperation, can take weeks out of your schedule later.",
+        "What turns up affects budget and timeline, and is worth reflecting in your offer or your conditions.",
+        "Findings also inform whether demolition or renovation is the better economics on the site.",
+        "Buildings of this era commonly contain several distinct regulated materials in unrelated locations."
+      ],
+      nexora: [
+        "Arranging a pre-purchase hazardous materials survey",
+        "Translating findings into realistic cost and timeline implications",
+        "Scoping what clearing the site would actually involve",
+        "Advising on sequence before you are committed to a closing date"
+      ]
+    }
+  };
+
+  var SURVEY_NOTE = {
+    none: "No survey has been done yet. That is typically the first thing to arrange, and it carries the longest lead time of anything on your list.",
+    partial: "A partial survey often misses materials in areas or layers that were not sampled. Confirm its scope covers everything your work will disturb.",
+    unknown: "Confirm whether a survey exists and get a copy. A previous owner's report may or may not cover your scope of work.",
+    complete: "With a full survey in hand you can scope and price the work accurately, and so can anyone bidding it."
+  };
+
+  var AGE_NOTE = {
+    'pre-1990': "Buildings from before 1990 commonly contain asbestos in flooring, ceilings, joint compound, insulation, and roofing.",
+    '1990-2000': "Buildings from the 1990s can still contain regulated materials. Age alone does not rule them out.",
+    'post-2000': "Newer buildings are less likely to contain asbestos, though a survey is still commonly expected before demolition.",
+    unknown: "Without a confirmed build date, the safe working assumption is that regulated materials may be present."
+  };
+
+  function assess(a){
+    var base = SITUATIONS[a.situation];
+    var urgency = 'routine';
+
+    if (a.situation === 'material-disturbed' || a.workStarted === 'disturbance-occurred'){
+      urgency = 'urgent';
+    } else if (a.workStarted === 'in-progress' &&
+               (a.surveyStatus === 'none' || a.surveyStatus === 'unknown') &&
+               a.buildingAge !== 'post-2000'){
+      urgency = 'urgent';
+    } else if (a.situation === 'survey-positive' || a.surveyStatus === 'none' || a.surveyStatus === 'partial'){
+      urgency = 'attention';
+    }
+
+    var applies = base.applies.slice();
+    if (SURVEY_NOTE[a.surveyStatus]) applies.push(SURVEY_NOTE[a.surveyStatus]);
+    if (AGE_NOTE[a.buildingAge]) applies.push(AGE_NOTE[a.buildingAge]);
+    if (a.workStarted === 'in-progress' && (a.surveyStatus === 'none' || a.surveyStatus === 'unknown')){
+      applies.unshift("Work is under way without a confirmed survey. That is worth pausing on before more material is disturbed.");
+    }
+
+    var confirm = [
+      "Current WorkSafeBC requirements for hazardous materials inspection before demolition or renovation work.",
+      "Notification requirements and notice periods that apply to your specific scope, directly with WorkSafeBC.",
+      "Current demolition or building permit requirements with your municipality, including deposits and site protection.",
+      "Who is the designated prime contractor for this site, and that it is recorded in writing."
+    ];
+    if (a.propertyType === 'multi-family' || a.propertyType === 'commercial' || a.propertyType === 'institutional'){
+      confirm.push("Occupant or tenant notification expectations that apply to your building type.");
+    }
+    if (a.propertyType === 'industrial'){
+      confirm.push("Any facility-specific or site-specific requirements beyond the standard municipal process.");
+    }
+
+    var next;
+    if (urgency === 'urgent'){
+      next = "Stop work in the affected area and call Nexora on 604-906-0060 today. This is worth a conversation before anything else happens on site.";
+    } else if (a.surveyStatus === 'none'){
+      next = "Arrange the hazardous materials survey now — the rest of your timeline waits on it.";
+    } else if (a.surveyStatus === 'partial' || a.surveyStatus === 'unknown'){
+      next = "Get the survey scope confirmed against your actual work area before you price or schedule the job.";
+    } else {
+      next = "Book a site assessment so the sequence and the documentation are set before work starts.";
+    }
+
+    return {
+      stage: base.stage,
+      urgency: urgency,
+      whatApplies: applies,
+      confirmWith: confirm,
+      nexoraHandles: base.nexora,
+      nextStep: next
+    };
+  }
+
   // ---- Step 3: submit ----
   $('submit-btn').addEventListener('click', function(){
-    if (attempts >= MAX_ATTEMPTS){
-      showError('questions', 'You have reached the limit for this session. Email nexoraindustriesinc@gmail.com and we will pick it up from here.');
-      return;
-    }
-    attempts++;
-
     var notes = $('f-notes').value.trim().slice(0,300);
-    var btn = $('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'Working through it…';
+    var result = assess(answers);
 
-    // Record the lead (fire and forget — never block the assessment on this)
     try {
       fetch('/', {
         method:'POST',
@@ -307,38 +445,13 @@
           'form-name':'portal-access',
           name: lead.name, company: lead.company,
           email: lead.email, phone: lead.phone,
-          situation: answers.situation || '', notes: notes
+          situation: answers.situation || '', notes: notes,
+          urgency: result.urgency, stage: result.stage
         })
       }).catch(function(){});
     } catch(e){}
 
-    fetch('/.netlify/functions/triage', {
-      method:'POST',
-      headers:{ 'Content-Type':'application/json' },
-      body: JSON.stringify({
-        situation: answers.situation,
-        buildingAge: answers.buildingAge,
-        surveyStatus: answers.surveyStatus,
-        workStarted: answers.workStarted,
-        propertyType: answers.propertyType,
-        notes: notes
-      })
-    })
-    .then(function(r){ return r.json().then(function(j){ return { ok:r.ok, body:j }; }); })
-    .then(function(res){
-      btn.disabled = false;
-      btn.textContent = 'Get my assessment →';
-      if (!res.ok || !res.body.result){
-        showError('questions', 'We could not generate the assessment just now. Email nexoraindustriesinc@gmail.com or call 604-906-0060 and we will walk you through it.');
-        return;
-      }
-      render(res.body.result);
-    })
-    .catch(function(){
-      btn.disabled = false;
-      btn.textContent = 'Get my assessment →';
-      showError('questions', 'Connection problem. Email nexoraindustriesinc@gmail.com or call 604-906-0060.');
-    });
+    render(result);
   });
 
   function list(el, items){
