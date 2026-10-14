@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.nexoraindustries.ca/blog/ssmuh-teardown-sequence-surrey.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.nexoraindustries.ca/blog/surrey-demolition-permit-timeline.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
